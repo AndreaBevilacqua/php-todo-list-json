@@ -11,7 +11,7 @@ $new_task = $_POST['task'] ?? '';
 
 if ($new_task) {
     
-    $tasks = json_decode($tasks);
+    $tasks = json_decode($json_data, true);
 
     if(in_array($new_task, $tasks)){
         echo json_encode('{"error": "Si é verificato un errore"}');
