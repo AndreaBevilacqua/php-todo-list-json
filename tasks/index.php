@@ -14,9 +14,9 @@ if ($new_task) {
     $tasks = json_decode($tasks);
 
     if(in_array($new_task, $tasks)){
-        $tasks[] = $new_task;
-    } else {
         echo json_encode('{"error": "Si é verificato un errore"}');
+    } else {
+        $tasks[] = $new_task;
     }
 
     $tasks = json_encode($tasks);
