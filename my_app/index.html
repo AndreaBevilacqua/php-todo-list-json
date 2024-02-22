@@ -16,7 +16,6 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Css -->
     <link rel="stylesheet" href="css/style.css">
-
     <!-- JS -->
     <script defer src="js/script.js"></script>
 </head>
@@ -28,9 +27,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h1>Todo List</h1>
+                            <h1 class="text-center text-white py-3">Todo List</h1>
                             <ul class="list-group list-group-flush border-1 rounded shadow">
-
+                                <li v-for="(task, id) in tasks" :key="id" class="list-group-item">{{task.text}}</li>
                             </ul>
                         </div>
                     </div>
@@ -42,7 +41,7 @@
                         <div class="col">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Inserisci new task">
-                                <button class="btn btn-outline-warning" type="submit">Add Task</button>
+                                <button class="btn btn-outline-success" type="submit">Add Task</button>
                             </div>
                         </div>
                     </div>
