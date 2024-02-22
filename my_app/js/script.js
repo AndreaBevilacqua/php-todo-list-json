@@ -1,29 +1,10 @@
 const { createApp } = Vue;
 
+const apiUri = 'http://localhost/PHP/php-todo-list-json/tasks';
+
 const app = createApp({
     data: () => ({
-        tasks: [
-            {
-                "id": 1,
-                "text": "HTML",
-                "done": false
-            },
-            {
-                "id": 2,
-                "text": "CSS",
-                "done": false
-            },
-            {
-                "id": 3,
-                "text": "Responsive design",
-                "done": false
-            },
-            {
-                "id": 4,
-                "text": "Javascript",
-                "done": false
-            }
-        ]
+        tasks: []
     })
 })
 
