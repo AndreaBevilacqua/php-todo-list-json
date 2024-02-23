@@ -7,11 +7,17 @@ $json_data = file_get_contents($source_path);
 
 $tasks = $json_data;
 
-$new_task = $_POST['task'] ?? '';
+$task_text = $_POST['task'] ?? '';
 
-if ($new_task) {
+if ($task_text) {
     
-    $tasks = json_decode($json_data, true);
+    $tasks = json_decode($tasks, true);
+
+    $new_task = [
+        'done' => false,
+        'text' => $task_text,
+        'id' => uniqid()
+    ];
 
     if(in_array($new_task, $tasks)){
         echo json_encode('{"error": "Si é verificato un errore"}');
